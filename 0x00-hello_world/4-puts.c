@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- *main -  writing C code with standard I/O
+ *main - entry stage
  *return: always 0 (success)
 */
 int main(void)
