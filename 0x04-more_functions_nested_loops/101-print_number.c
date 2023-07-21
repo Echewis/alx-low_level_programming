@@ -1,7 +1,6 @@
 #include "main.h"
 /**
  * print_number - prints an integer
- * @s: input integer parameter
  * @n: output asigned number
  * Return: Always 0
  */
