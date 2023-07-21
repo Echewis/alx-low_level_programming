@@ -1,9 +1,9 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
- * main - Entry point
- * @a void int
- * Return Always 0 (Success)
+ * main - prints a fizz Buzz program
+ * Return: Always 0 (Success)
  */
 
 int main(void)
