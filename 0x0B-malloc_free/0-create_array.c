@@ -11,12 +11,10 @@
  */
 char *create_array(unsigned int size, char c)
 {
-
+	unsigned int a;
 	char *aray;
 
 	aray = malloc(size * sizeof(char));
-
-	unsigned int a;
 
 	if (size == 0 || aray == NULL)
 	{
