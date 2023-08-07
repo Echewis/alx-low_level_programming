@@ -4,7 +4,6 @@
  * main - is main function
  * @argv: is the vector
  * @argc: is the count
- * @x: is the unknown value
  *
  * Return: always return 0
  */
