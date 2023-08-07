@@ -12,22 +12,25 @@ char *_strdup(char *str)
 	int y = 0, z = 1;
 	char *allo;
 
-	allo = malloc((sizeof(char) * z) + 1);
-
-	if (str == NULL || allo == NULL)
+	if (str == NULL)
 	{
-		free(allo);
 		return (NULL);
 	}
 	while (str[z])
 	{
 		z++;
 	}
-		while (y < z)
-		{
-			allo[y] = str[y];
-			y++;
-		}
+	allo = malloc((sizeof(char) * z) + 1);
+
+	if (allo == NULL)
+	{
+		return (NULL);
+	}
+	while (y < z)
+	{
+		allo[y] = str[y];
+		y++;
+	}
 	allo[y] = '\0';
 
 	return (allo);
