@@ -6,7 +6,6 @@
  * create_array - is the function
  * @size: the unknown size
  * @c: character for array
- * @a: value for unsigned int
  * Return: always retuern 0
  */
 char *create_array(unsigned int size, char c)
