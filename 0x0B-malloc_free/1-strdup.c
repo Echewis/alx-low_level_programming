@@ -16,6 +16,7 @@ char *_strdup(char *str)
 
 	if (str == NULL || allo == NULL)
 	{
+		free(allo);
 		return (NULL);
 	}
 	while (str[z])
