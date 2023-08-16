@@ -15,15 +15,3 @@ void print_name(char *name, void (*f)(char *))
 	f(name);
 
 }
-
-/**
- * pr - prints out the name
- *
- * @name: name to be printed
- *
- */
-/*void pr(char *name)
-{
-
-	printf("%s\n", name);
-}*/
