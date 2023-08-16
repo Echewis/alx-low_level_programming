@@ -1,39 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * print_opcodes - is a function
- * @void: will return void
- */
-void print_opcodes(void)
-{
-	char *cmd;
-	int nbytes;
-
-	nbytes = asprintf(&cmd, "objdump -d -j .text -M intel % |
-	grep -A%d '<print_opcodes>:' | cut - f2", __FILE__, 10000);
-		if (nbytes == -1)
-		{
-			perror("asprintf");
-			exit(EXIT_FAILURE);
-		}
-	system(cmd);
-	free(cmd);
-}
 
 /**
- * main - is the main function
- * @argv: is the vector
- * @argc: counts the arguments
- * Return: will return exit failure or success
+ * main - is a function
+ * @argc: counts the argument
+ * @argv: lists the argument
+ * Return: will return some value at the end
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
+	int bytes, a;
+	char *arr;
+
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: %s number_of_bytes\n", argv[0]);
-		return (EXIT_FAILURE);
+		printf("Error\n");
+		exit(1);
 	}
-	print_opcodes();
-	return (EXIT_SUCCESS);
+
+	bytes = atoi(argv[1]);
+
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+
+	arr = (char *)main;
+
+	for (a = 0; a < bytes; a++)
+	{
+		if (a == bytes - 1)
+		{
+			printf("%0hhx\n", arr[a]);
+			break;
+		}
+		printf("%02hhx", arr[a]);
+	}
+	return (0);
 }
