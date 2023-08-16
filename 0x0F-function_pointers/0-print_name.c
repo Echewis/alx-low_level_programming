@@ -10,6 +10,8 @@
 
 void print_name(char *name, void (*f)(char *))
 {
+	if (f == NULL || name == NULL)
+		return;
 	f(name);
 
 }
@@ -20,8 +22,8 @@ void print_name(char *name, void (*f)(char *))
  * @name: name to be printed
  *
  */
-void pr(char *name)
+/*void pr(char *name)
 {
 
 	printf("%s\n", name);
-}
+}*/
