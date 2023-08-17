@@ -8,11 +8,14 @@
  * @argv: is the agrument vector
  * Return: can return different outputs
  */
-int main(int __attribute__((__unused__)) argc, char *argv)
+int main(int argc, char *argv[])
 {
 	int num1;
 	int num2;
-	char *operate;
+	int n;
+	int result;
+
+	int (*op)(int, int);
 
 	if (argc != 4)
 	{
@@ -21,21 +24,23 @@ int main(int __attribute__((__unused__)) argc, char *argv)
 	}
 
 	num1 = atoi(argv[1]);
-		operate = argv[2];
-	num2 = atio(argv[3]);
+		op = get_op_func(argv[2]);
+	num2 = atoi(argv[3]);
+	n = *argv[2];
 
-	if (get_op_func(operate) == NULL || operate[1] != '\0')
+	if (!op)
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((*operate == '/' && num2 == 0) || (operate == '%' && num2 == 0))
+	if ((n == '/' || n == '%') && num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
-	printf("%d\n", get_op_func(operate)(num1, num2));
+	result = op(num1, num2);
+	printf("%d\n", result);
 	return (0);
 }
