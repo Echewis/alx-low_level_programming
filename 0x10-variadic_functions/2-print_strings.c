@@ -3,7 +3,11 @@
 #include <string.h>
 #include <stdio.h>
 #include "variadic_functions.h"
-
+/**
+ * print_strings - is a pointer
+ * @separator: is a string
+ * @n: is the number of int
+ */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list list;
