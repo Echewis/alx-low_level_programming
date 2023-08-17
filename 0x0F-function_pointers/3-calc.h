@@ -9,9 +9,10 @@ int op_mod(int a, int b);
 int (*get_op_func(char *s))(int, int);
 
 /**
- * struct - is a structure operator
- * @operate: is what the struct works with
- * @f: is a pointer to another function
+ * struct op - Struct op
+ *
+ * @op: The operator
+ * @f: The function associated
  */
 typedef struct op
 {
