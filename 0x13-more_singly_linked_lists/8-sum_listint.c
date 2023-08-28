@@ -8,10 +8,11 @@
 
 int sum_listint(listint_t *head)
 {
-	int add;
+	int add = 0;
 
 	listint_t *latest_node;
 
+	latest_node = head;
 	while (latest_node != NULL)
 	{
 		add += latest_node->n;
