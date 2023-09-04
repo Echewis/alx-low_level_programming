@@ -8,9 +8,9 @@
  */
 void print_elf_header(Elf64_Ehdr *header)
 {
-	printf("Magic: ");
+	int i;
 
-	int i = 0;
+	printf("Magic: ");
 
 	for (i = 0; i < EI_NIDENT; i++)
 	{
@@ -36,6 +36,7 @@ void print_elf_header(Elf64_Ehdr *header)
 int main(int argc, char **argv)
 {
 	int fd;
+	Elf64_Ehdr header;
 
 	if (argc != 2)
 	{
@@ -51,7 +52,6 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	Elf64_Ehdr header;
 
 	if (read(fd, &header, sizeof(header)) != sizeof(header))
 	{
@@ -67,4 +67,5 @@ int main(int argc, char **argv)
 	}
 	print_elf_header(&header);
 	close(fd);
+	return (0);
 }
