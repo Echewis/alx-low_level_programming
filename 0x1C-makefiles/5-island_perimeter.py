@@ -14,7 +14,7 @@ def water_number(grid, a, b):
     if a <= 0 or not grid[a - 1][b]:
         number += 1
     if b <= 0 or not grid[a][b - 1]:
-        number = 1
+        number += 1
     if b >= len(grid[a]) - 1 or not grid[a][b + 1]:
         number += 1
     if a >= len(grid) - 1 or not grid[a + 1][b]:
@@ -33,4 +33,5 @@ def island_perimeter(grid):
         for b in range(len(grid[a])):
             if grid[a][b]:
                 primeters += water_number(grid, a, b)
+
     return perimeters
